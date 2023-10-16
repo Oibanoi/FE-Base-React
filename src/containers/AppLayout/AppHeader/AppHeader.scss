@@ -1,0 +1,15 @@
+.category-button {
+  font-weight: bold;
+
+  &:hover {
+    color: dodgerblue;
+    cursor: pointer;
+  }
+}
+
+.category {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+}

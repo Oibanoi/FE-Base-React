@@ -1,0 +1,7 @@
+include:
+  - project: 'digilife/workloads/ci-template'
+    ref: master
+    file: '/gitlab-ci.v1.0.yaml'
+variables:
+  IMAGE_REPOSITORY: asia.gcr.io/digilife-registry/o2o/digilife-timesheet/dgl-timesheet-fe
+  NO_SCAN_FILES: 'etc/[a-zA-Z0-9_-]+.js'

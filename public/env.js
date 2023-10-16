@@ -1,0 +1,11 @@
+/*
+ * Define default environment variables of the application.
+ * You can customize these values by overriding them to public/configs/env-local.js (create this file if not exist).
+ * Don't forget to uncomment the env-local.js <script> tag in index.html.
+ * To enable tracking, replace tracker.appId with your app ID in env-local.js.
+ */
+window.config = {
+  apiServices: {
+    client: 'http://0.0.0.0:8000/api',
+  },
+};
