@@ -31,3 +31,5 @@ public/configs/env-local.js
 # storybook build folder
 /storybook-static
 .idea
+.vscode
+.storybook
