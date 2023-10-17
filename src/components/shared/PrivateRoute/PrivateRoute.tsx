@@ -1,7 +1,6 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IRoute } from '../../../interfaces';
-import { userServices } from '../../../services';
 
 const PrivateRoute = ({
   component: Component,

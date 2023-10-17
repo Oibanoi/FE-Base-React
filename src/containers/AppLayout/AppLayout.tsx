@@ -6,7 +6,7 @@ import AppContent from './AppContent';
 import './AppLayout.scss';
 import { IRoute } from '../../interfaces';
 import AppSider from './AppSider';
-import { userServices } from '../../services';
+// import { userServices } from '../../services';
 
 /**
  * This container is for lifting-up the `AppContent` to the parent node,
@@ -21,9 +21,9 @@ const AppLayoutContainer: React.FC<{
       {/*{localStorage.getItem('token') && (*/}
       {/*  <AppSider filteredNavigation={filteredNavigation} />*/}
       {/*)}*/}
-      {userServices.isLoggedIn() && (
-        <AppSider filteredNavigation={filteredNavigation} />
-      )}
+      {/* {userServices.isLoggedIn() && (
+      )} */}
+      <AppSider filteredNavigation={filteredNavigation} />
       <Layout>
         <AppHeader />
         {children}
