@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component Renders button back to home correctly 1`] = `
+<div>
+  <a
+    href="/"
+  >
+    <button
+      class="ant-btn css-dev-only-do-not-override-pr0fja ant-btn-primary"
+      type="button"
+    >
+      <span
+        class="ant-btn-icon"
+      >
+        <div
+          icon="[object Object]"
+        />
+      </span>
+      <span>
+        Về trang chủ
+      </span>
+    </button>
+  </a>
+</div>
+`;
+
+exports[`Button Component Renders button logout correctly 1`] = `
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-pr0fja ant-btn-default"
+    type="button"
+  >
+    <span
+      class="ant-btn-icon"
+    >
+      <div
+        icon="[object Object]"
+      />
+    </span>
+    <span>
+      Đăng xuất
+    </span>
+  </button>
+</div>
+`;

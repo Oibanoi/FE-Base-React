@@ -8,6 +8,7 @@ const defaultFilters = {
   query: '',
   isActive: undefined,
 };
+// Add missing import
 
 describe('BrandFilter Component', () => {
   it('renders correctly', () => {
