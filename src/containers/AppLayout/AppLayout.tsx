@@ -3,6 +3,7 @@ import { commonHooks } from 'hooks';
 import { IRoute } from 'interfaces';
 import { useEffect, useState } from 'react';
 import routes from 'routes';
+import { userServices } from 'services';
 import AppContent from './AppContent';
 import AppHeader from './AppHeader';
 import './AppLayout.scss';
@@ -28,10 +29,12 @@ const AppLayout: React.FC = () => {
 
   return (
     <Layout className="app-layout">
-      <AppSider
-        filteredNavigation={routes as IRoute[]}
-        collapsed={siderCollapsed}
-      />
+      {userServices.isLoggedIn() && (
+        <AppSider
+          filteredNavigation={routes as IRoute[]}
+          collapsed={siderCollapsed}
+        />
+      )}
       <Layout>
         <AppHeader onClickSiderIcon={toggleSider} />
         <AppContent filteredRoutes={routes as IRoute[]} />

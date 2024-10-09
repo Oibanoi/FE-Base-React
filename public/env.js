@@ -8,6 +8,6 @@
 window.config = {
   env: 'dev',
   apiServices: {
-    backend: 'localhost:8000',
+    backend: 'http://0.0.0.0:8000',
   },
 };

@@ -26,6 +26,8 @@ const handleResponseError = (error: IErrorInterceptor) => {
       break;
   }
 };
+export const getResult = (response: any) => response.data;
+export const getData = (response: any) => response.data.data;
 
 export default {
   handleResponseError,
