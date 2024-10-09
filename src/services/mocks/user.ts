@@ -5,8 +5,6 @@ export const currentUser = {
   phone_number: '0852161778',
   address: '',
   birthday: '',
-  roles: ['catalog:admin'],
-  permissions: ['catalog:all:all', 'ppm:all:all'],
   meta_data: {
     seller_id: '1,2',
     sso_id: 70024,

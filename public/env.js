@@ -8,6 +8,6 @@
 window.config = {
   env: 'dev',
   apiServices: {
-    catalog: 'https://catalog.develop.tekoapis.net',
+    backend: 'localhost:8000',
   },
 };

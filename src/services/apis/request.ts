@@ -6,7 +6,7 @@ import { userServices } from 'services';
 const { apiServices = {} } = window.config || {};
 
 const baseClient = axios.create({
-  baseURL: apiServices.catalog,
+  baseURL: apiServices.backend,
 });
 
 const getAuthorization = () => {
