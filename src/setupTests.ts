@@ -39,26 +39,6 @@ const localStorageMock = {
 };
 global.localStorage = localStorageMock;
 
-// Mock TekoID
-// jest.mock('teko-oauth2', () => {
-//   return {
-//     init: jest.fn(() => Promise.resolve({})),
-//     user: {
-//       isLoggedIn: jest.fn(() => mockUserServices.isLoggedIn()),
-//       login: jest.fn(() => mockUserServices.login()),
-//       logout: jest.fn(() => mockUserServices.logout()),
-//       getAccessToken: jest.fn(() => mockUserServices.getAccessToken()),
-//       getUserInfo: jest.fn(() => mockUserServices.getUserInfo()),
-//       getFullUserInfo: jest.fn(() => mockUserServices.getFullUserInfo()),
-//       events: {
-//         // Example mocks of TekoId events
-//         addUserSessionChanged: jest.fn(() => {}),
-//         addUserSessionIdChanged: jest.fn(() => {}),
-//       },
-//     },
-//   };
-// });
-
 // Mock react-router-dom
 jest.mock('react-router-dom', () => {
   const originalModule = jest.requireActual('react-router-dom');

@@ -1,9 +1,7 @@
 export const currentUser = {
   sub: 'a160863da1644a119382cfc3e8685a7c',
   name: 'User',
-  picture:
-    'https://lh3.googleusercontent.com/a-/AAuE7mDQFfGHKAJ9y6ZNwtoCyvvXfe6CY9b97C8ndmsg',
-  email: 'linh.vh@teko.vn',
+  email: 'user@gmail.com',
   phone_number: '0852161778',
   address: '',
   birthday: '',

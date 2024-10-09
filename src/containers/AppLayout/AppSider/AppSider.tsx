@@ -97,7 +97,7 @@ const AppSider: React.FC<AppSiderProps> = ({
 
       {!collapsed && (
         <Footer className="app-footer">
-          Teko Admin New Boilerplate © {import.meta.env.VITE_APP_VERSION}
+          Base FE © {import.meta.env.VITE_APP_VERSION}
         </Footer>
       )}
     </Sider>
