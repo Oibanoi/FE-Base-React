@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/swcrc",
+  "jsc": {
+    "target": "es2020",
+    "parser": {
+      "syntax": "typescript",
+      "tsx": true,
+      "decorators": false,
+      "dynamicImport": false
+    },
+    "transform": {
+      "react": {
+        "pragma": "React.createElement",
+        "pragmaFrag": "React.Fragment",
+        "throwIfNamespace": true,
+        "development": false,
+        "useBuiltins": false,
+        "runtime": "automatic"
+      },
+      "hidden": {
+        "jest": true
+      },
+      // Replace import.meta.env values to prevent errors, solution from https://github.com/swc-project/swc/issues/2615
+      "optimizer": {
+        "globals": {
+          "vars": {
+            "import.meta.env.VITE_APP_VERSION": "1.0.0"
+            // you can add more env here
+          }
+        }
+      }
+    }
+  },
+  "module": {
+    "type": "commonjs",
+    "strict": false,
+    "strictMode": true,
+    "lazy": false,
+    "noInterop": false
+  }
+}

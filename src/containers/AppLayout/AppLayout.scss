@@ -1,0 +1,200 @@
+.app-layout {
+  min-height: 100vh;
+  min-width: 100vw;
+
+  .app-sider {
+    z-index: 10;
+
+    .app-logo {
+      position: fixed;
+      width: 270px;
+      height: 122px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+
+      img {
+        max-width: 180px;
+        max-height: 90px;
+      }
+    }
+
+    .app-menu {
+      &.ant-menu-root {
+        color: #fff;
+        position: fixed;
+        width: $sidebar-width;
+        top: 122px;
+        user-select: none;
+        max-height: calc(100vh - 122px);
+        padding-bottom: 52px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar-thumb {
+          background: $color-text-secondary;
+        }
+
+        .app-icon {
+          margin-right: $align-base;
+          color: $color-text-secondary;
+          vertical-align: -0.25em;
+          transition: $transition-base;
+          display: inline-block;
+        }
+
+        .ant-menu-item {
+          color: $color-text-secondary;
+          background: none;
+        }
+
+        .ant-menu-item,
+        .ant-menu-submenu-title {
+          margin: 0;
+          height: 48px;
+          line-height: 48px;
+          .anticon + span {
+            margin-left: 0;
+          }
+          width: 100%;
+          &:hover {
+            color: $color-light;
+          }
+        }
+
+        .ant-menu-item-active,
+        .ant-menu-submenu-active,
+        .ant-menu-submenu-open {
+          .app-icon {
+            color: $color-light;
+          }
+        }
+
+        .ant-menu-item-selected,
+        .ant-menu-submenu-selected {
+          color: $color-light;
+          .app-icon {
+            font-weight: $font-weight-bold;
+          }
+        }
+
+        .ant-menu-item-selected,
+        .ant-menu-submenu-selected .ant-menu-submenu-title {
+          &.ant-menu-submenu-title {
+            color: $color-light !important;
+            font-weight: $font-weight-medium;
+          }
+          font-weight: $font-weight-bold;
+        }
+
+        .ant-menu-submenu-open .ant-menu-submenu-title,
+        .ant-menu-sub {
+          background: $color-sidebar-focus;
+          box-shadow: none;
+          border-radius: 0%;
+        }
+
+        .ant-menu-sub .ant-menu-item {
+          padding-left: 55px !important;
+        }
+      }
+
+      &.ant-menu-dark {
+        background: $color-sidebar-dark;
+
+        &::-webkit-scrollbar-track {
+          background: $color-sidebar-dark;
+        }
+      }
+      &.ant-menu-light {
+        background: $color-sidebar-light;
+
+        &::-webkit-scrollbar-track {
+          background: $color-sidebar-light;
+        }
+      }
+    }
+
+    .app-footer {
+      position: fixed;
+      padding: $align-base 0;
+      bottom: 0;
+      width: 270px;
+      line-height: 20px;
+      text-align: center;
+      color: #8f9598;
+    }
+
+    &.collapsed {
+      .app-logo {
+        width: 80px;
+        height: 92px;
+        img {
+          width: 60px;
+        }
+      }
+      // need to apply CSS for both ant-menu-dark and ant-menu-light class due to having ant-menu-dark class when theme mode is dark & having ant-menu-light class when theme mode is light
+      .app-menu.ant-menu-dark,
+      .ant-menu-light {
+        width: 80px;
+        top: 92px;
+      }
+    }
+  }
+
+  .app-header {
+    padding: 0 $align-base;
+    display: flex;
+    justify-content: space-between;
+
+    .app-user {
+      position: relative;
+      margin-left: auto;
+      cursor: pointer;
+      margin-left: $align-base;
+
+      .ant-avatar {
+        top: -1px;
+      }
+
+      span {
+        margin-left: $align-half;
+      }
+    }
+  }
+
+  .app-content {
+    display: flex;
+    flex-direction: column;
+
+    .app-breadcrumb {
+      padding: $align-base;
+      @include typo-caption;
+    }
+
+    .app-container {
+      display: flex;
+      flex-direction: column;
+      flex: auto;
+
+      .app-container-head {
+        padding: 0 $align-base;
+
+        .app-title {
+          margin-bottom: $align-half;
+          margin-top: 0;
+          @include typo-h1;
+        }
+      }
+
+      .app-container-body {
+        flex: auto;
+        padding: $align-base;
+      }
+    }
+  }
+}
+
+body {
+  margin: 0;
+}

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly 1`] = `
+<div>
+  <span
+    class="ant-typography css-dev-only-do-not-override-pr0fja"
+  >
+    Trang chủ
+  </span>
+</div>
+`;

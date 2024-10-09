@@ -1,0 +1,5 @@
+{
+  // You can add more patterns if needed
+  "extends": "./tsconfig.json",
+  "exclude": ["src/**/*.test.ts", "src/**/*.test.tsx", "src/setupTests.ts"]
+}

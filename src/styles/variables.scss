@@ -1,0 +1,56 @@
+// Sidebar colors
+$color-sidebar-dark: #000000;
+$color-sidebar-light: #1b1d29;
+$color-sidebar-focus: #272d36;
+$sidebar-width: 270px;
+$sidebar-collapsed-width: 80px;
+
+/**
+* Transitions
+*/
+
+$transition-base: all 0.2s ease;
+
+/**
+* Typography
+*/
+
+// Font size
+$font-size-20: 20px;
+$font-size-18: 18px;
+$font-size-16: 16px;
+$font-size-14: 14px;
+$font-size-12: 12px;
+
+// Font weight
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Line height
+$line-height-24: 24px;
+$line-height-20: 20px;
+$line-height-16: 16px;
+
+// Alignment
+$align-base: 16px;
+$align-half: 8px;
+
+// Colors
+$color-text-secondary: #8f9598;
+$color-light: #ffffff;
+$color-border: #e0e0e0;
+
+// Border
+$border-base: 1px solid $color-border;
+$border-radius-base: 4px;
+
+@mixin typo-caption {
+  font-size: $font-size-12;
+  line-height: $line-height-16;
+}
+@mixin typo-h1 {
+  font-size: $font-size-20;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-24;
+}
