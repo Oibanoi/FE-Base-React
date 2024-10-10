@@ -1,9 +1,21 @@
 import { notification } from 'antd';
-import { ISignUpPayload } from 'interfaces/user';
+import { ISignUpPayload, IUser } from 'interfaces/user';
 import { useState } from 'react';
 import { userServices } from 'services';
 const useUser = () => {
   const [actionLoading, setActionLoading] = useState(false);
+  const [user, setUser] = useState<IUser>({} as IUser);
+  const getme = async () => {
+    try {
+      setActionLoading(true);
+      const res = await userServices.getMe();
+      if (res) {
+        setUser(res);
+      }
+    } finally {
+      setActionLoading(false);
+    }
+  };
   const login = async (username: string, password: string) => {
     try {
       setActionLoading(true);
@@ -34,6 +46,8 @@ const useUser = () => {
     }
   };
   return {
+    getme,
+    user,
     login,
     signUp,
     actionLoading,

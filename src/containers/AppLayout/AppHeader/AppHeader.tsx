@@ -8,10 +8,10 @@ import { Avatar, Dropdown, Layout, MenuProps } from 'antd';
 import { Responsive } from 'components/shared/Responsive/Responsive';
 import { localizationConstants } from 'constants/index';
 import AppSettings from 'containers/AppLayout/AppSettings';
-import { StoreContext } from 'contexts';
 import { localizationHelpers } from 'helpers';
 import { t } from 'helpers/i18n';
-import React, { useContext, useState } from 'react';
+import { userHooks } from 'hooks';
+import React, { useEffect, useState } from 'react';
 import { userServices } from 'services';
 
 const { Header } = Layout;
@@ -22,7 +22,11 @@ const { changeLanguage, getCurrentLanguage } = localizationHelpers;
 const AppHeader: React.FC<{ onClickSiderIcon: () => void }> = ({
   onClickSiderIcon,
 }) => {
-  const { currentUser } = useContext(StoreContext);
+  const { user, getme } = userHooks.useUser();
+  useEffect(() => {
+    // getAll();
+    getme();
+  }, []);
   const [toggleDrawer, setToggleDrawer] = useState(false);
 
   const userMenu: MenuProps['items'] = [
@@ -89,7 +93,7 @@ const AppHeader: React.FC<{ onClickSiderIcon: () => void }> = ({
                 </Dropdown>
                 <Dropdown trigger={['click']} menu={{ items: userMenu }}>
                   <span className="app-user" data-testid="current-user-name">
-                    <Avatar src={currentUser.picture} />
+                    <Avatar />
                     <DownOutlined />
                   </span>
                 </Dropdown>
@@ -107,7 +111,7 @@ const AppHeader: React.FC<{ onClickSiderIcon: () => void }> = ({
             <Dropdown trigger={['click']} menu={{ items: userMenu }}>
               <span className="app-user" data-testid="current-user-name">
                 <Avatar />
-                <span className="label">{currentUser.name}</span>
+                <span className="label">{user?.email}</span>
                 <DownOutlined />
               </span>
             </Dropdown>

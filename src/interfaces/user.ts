@@ -15,3 +15,10 @@ export interface ISignUpResponse {
   id: number;
   role: string;
 }
+
+export interface IUser {
+  fullName: string;
+  email: string;
+  role: string;
+  lastLogin: string;
+}

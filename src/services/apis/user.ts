@@ -8,12 +8,13 @@ const isLoggedIn = () => {
   // return true;
   return !!token;
 };
-
+const getMe = () => {
+  return baseClient.get('/users/me').then(getData);
+};
 const logout = async () => {
-  // Tracking - Reset userId when logged out
-  await baseClient.post('/logout');
   localStorage.removeItem('token');
   localStorage.removeItem('refreshToken');
+  browserHistory.push('/login');
 };
 const login = (username: string, password: string): Promise<ILogin> => {
   return baseClient
@@ -38,4 +39,5 @@ export default {
   login,
   getAccessToken,
   denyAccess,
+  getMe,
 };

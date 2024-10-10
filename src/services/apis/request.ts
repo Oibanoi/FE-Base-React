@@ -12,7 +12,7 @@ const baseClient = axios.create({
 const getAuthorization = () => {
   return userServices.isLoggedIn()
     ? `Bearer ${userServices.getAccessToken()}`
-    : '';
+    : 'Bearer z';
 };
 
 // Do something before request is sent
