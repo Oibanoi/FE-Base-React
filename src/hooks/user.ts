@@ -20,6 +20,7 @@ const useUser = () => {
     try {
       setActionLoading(true);
       const res = await userServices.login(username, password);
+      console.log(res.accessToken);
       if (res.accessToken) {
         const token = res.accessToken;
         localStorage.setItem('token', token);

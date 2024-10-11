@@ -1,6 +1,7 @@
 import { browserHistory } from 'helpers';
 import { getData } from 'helpers/request';
 import { ILogin, ISignUpPayload, ISignUpResponse } from 'interfaces/user';
+import { redirect } from 'react-router-dom';
 import { requestServices } from 'services';
 const { baseClient } = requestServices;
 const isLoggedIn = () => {
@@ -13,8 +14,7 @@ const getMe = () => {
 };
 const logout = async () => {
   localStorage.removeItem('token');
-  localStorage.removeItem('refreshToken');
-  browserHistory.push('/login');
+  redirect('/login');
 };
 const login = (username: string, password: string): Promise<ILogin> => {
   return baseClient

@@ -4,7 +4,6 @@ import { lazy } from 'react';
 
 // App pages
 const Home = lazy(() => import('containers/Home'));
-const Login = lazy(() => import('containers/Login'));
 // const BrandList = lazy(() => import('containers/Brand/BrandList'));
 // const BrandCreate = lazy(() => import('containers/Brand/BrandCreate'));
 
@@ -14,12 +13,6 @@ const routes = [
     name: t('Home'),
     component: Home,
     icon: HomeOutlined,
-  },
-  {
-    exact: true,
-    path: '/login',
-    name: 'Login',
-    component: Login,
   },
 ];
 

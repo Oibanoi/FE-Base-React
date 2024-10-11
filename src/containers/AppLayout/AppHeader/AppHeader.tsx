@@ -12,6 +12,7 @@ import { localizationHelpers } from 'helpers';
 import { t } from 'helpers/i18n';
 import { userHooks } from 'hooks';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { userServices } from 'services';
 
 const { Header } = Layout;
@@ -22,7 +23,12 @@ const { changeLanguage, getCurrentLanguage } = localizationHelpers;
 const AppHeader: React.FC<{ onClickSiderIcon: () => void }> = ({
   onClickSiderIcon,
 }) => {
+  const navigate = useNavigate();
   const { user, getme } = userHooks.useUser();
+  const onLogout = () => {
+    userServices.logout();
+    navigate('/login');
+  };
   useEffect(() => {
     // getAll();
     getme();
@@ -42,7 +48,7 @@ const AppHeader: React.FC<{ onClickSiderIcon: () => void }> = ({
      */
     {
       key: 'btn-logout',
-      onClick: userServices.logout,
+      onClick: onLogout,
       icon: <LogoutOutlined />,
       label: t('Logout'),
       /**

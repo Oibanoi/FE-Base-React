@@ -1,6 +1,5 @@
-import { userHooks } from 'hooks';
 import { IUser } from 'interfaces/user';
-import { createContext, useEffect } from 'react';
+import { createContext } from 'react';
 
 interface StoreContextType {
   loading?: boolean;
@@ -11,26 +10,9 @@ interface StoreContextType {
 
 export const StoreContext = createContext<StoreContextType>({
   loading: true,
+  user: undefined,
 } as StoreContextType);
 
 export interface StoreProviderProps {
   children: React.ReactNode;
 }
-export const AuthProvider: React.FC<StoreProviderProps> = ({ children }) => {
-  const { user, actionLoading, getme } = userHooks.useUser();
-  useEffect(() => {
-    // getAll();
-    getme();
-  }, []);
-
-  return (
-    <StoreContext.Provider
-      value={{
-        user,
-        loading: actionLoading,
-      }}
-    >
-      {children}
-    </StoreContext.Provider>
-  );
-};

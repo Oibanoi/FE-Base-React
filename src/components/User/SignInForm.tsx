@@ -24,9 +24,6 @@ export const SignInForm: React.FC<SignInFormProps> = ({
     <Wrapper className={className}>
       <Box>
         <Title style={{ fontWeight: '700' }}>{t('welcome')}</Title>
-        <Typography.Text type="secondary">
-          {t('sign in to enjoin the feature of kodemy')}
-        </Typography.Text>
       </Box>
       <Box style={{ width: '100%' }}>
         <Form<SignInFormValues>
