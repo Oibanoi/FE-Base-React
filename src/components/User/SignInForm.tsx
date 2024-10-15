@@ -97,7 +97,7 @@ const Title = styled(Typography.Title)`
 
 const Wrapper = styled.div`
   padding: 16px;
-  width: 100%;
+  width: 90%;
 `;
 
 const Box = styled.div`
