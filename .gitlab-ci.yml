@@ -1,0 +1,37 @@
+variables:
+  DOCKER_IMAGE_NAME: base-react
+  DOCKER_HUB_USERNAME: huupb
+
+stages:
+  - package
+  - build
+
+build:
+  stage: package
+  image: node:16
+  script:
+    - npm install --force
+    - echo "Building project"
+    - npm run build
+    - echo "Build done"
+  artifacts:
+    paths:
+      - build/
+  only:
+    - master
+
+build_image:
+  image: docker
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
+  script:
+    - docker build -t $DOCKER_IMAGE_NAME .
+    - docker tag $DOCKER_IMAGE_NAME $DOCKER_HUB_USERNAME/$DOCKER_IMAGE_NAME:v1.0
+    - docker push $DOCKER_HUB_USERNAME/$DOCKER_IMAGE_NAME:v1.0
+    - echo "Image built"
+  only:
+    - master
+
